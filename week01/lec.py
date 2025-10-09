@@ -2,6 +2,7 @@ import ast
 import dis
 import io
 import tokenize
+from typing import Any
 
 # 1) этап 1 - токенизация кода на языке пайтон
 code = "x = 5 + 3"
@@ -18,7 +19,7 @@ print(*ast.dump(tree, indent=2))
 # 3) этап 3 - компиляция в байт код
 
 
-def greet():
+def greet() -> None:
     print("Hello!")
 
 
@@ -36,8 +37,6 @@ dis.dis(greet)
 # print("3")
 
 
-x = 25
-
 # >>> x = 25
 # >>> id(x)
 # 4331936160
@@ -49,13 +48,13 @@ x = 25
 # >>>
 
 
-x = "global"
+x: str = "global"
 
 
-def foo():
+def foo() -> None:
     x = "local_1"
 
-    def foo_inner():
+    def foo_inner() -> None:
         # nonlocal x
         # x = "local_2"
         # print(x)
@@ -72,9 +71,9 @@ foo()
 print(x)
 
 
-x = ["Artem"]
-
-print(x is x[0].append("Danya"))
+x1: list[str] = ["Artem"]
+x2: list[Any] = x1 + ["Danya"]
+print(x1 is x2)
 
 
 # >>> x = 5

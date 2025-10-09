@@ -15,7 +15,7 @@ from pathlib import Path
 # ========================
 
 
-def read_file_basic(filename):
+def read_file_basic(filename: str) -> None:
     """Чтение файла построчно"""
     print("=== Чтение файла построчно ===")
     try:
@@ -26,7 +26,7 @@ def read_file_basic(filename):
         print(f"Файл {filename} не найден")
 
 
-def read_file_all(filename):
+def read_file_all(filename: str) -> None:
     """Чтение всего файла сразу"""
     print("\n=== Чтение всего файла ===")
     try:
@@ -37,7 +37,7 @@ def read_file_all(filename):
         print(f"Файл {filename} не найден")
 
 
-def read_file_lines(filename):
+def read_file_lines(filename: str) -> None:
     """Чтение файла в список строк"""
     print("\n=== Чтение файла в список строк ===")
     try:
@@ -55,7 +55,7 @@ def read_file_lines(filename):
 # ========================
 
 
-def write_file_basic(filename, content):
+def write_file_basic(filename: str, content: str) -> None:
     """Запись в файл (перезапись)"""
     print("\n=== Запись в файл (перезапись) ===")
     try:
@@ -66,7 +66,7 @@ def write_file_basic(filename, content):
         print(f"Ошибка записи: {e}")
 
 
-def append_to_file(filename, content):
+def append_to_file(filename: str, content: str) -> None:
     """Добавление в конец файла"""
     print("\n=== Добавление в конец файла ===")
     try:
@@ -77,7 +77,7 @@ def append_to_file(filename, content):
         print(f"Ошибка добавления: {e}")
 
 
-def write_multiple_lines(filename, lines_list):
+def write_multiple_lines(filename: str, lines_list: str) -> None:
     """Запись нескольких строк"""
     print("\n=== Запись нескольких строк ===")
     try:
@@ -94,7 +94,7 @@ def write_multiple_lines(filename, lines_list):
 # ========================
 
 
-def json_example():
+def json_example() -> None:
     """Пример работы с JSON"""
     print("\n=== Работа с JSON ===")
 
@@ -124,7 +124,7 @@ def json_example():
 # ========================
 
 
-def csv_example():
+def csv_example() -> None:
     """Пример работы с CSV"""
     print("\n=== Работа с CSV ===")
 
@@ -158,7 +158,7 @@ def csv_example():
 # ========================
 
 
-def folder_operations():
+def folder_operations() -> None:
     """Примеры работы с папками"""
     print("\n=== Работа с папками ===")
 
@@ -189,7 +189,7 @@ def folder_operations():
         print(f"  {file}")
 
 
-def file_info(filename):
+def file_info(filename: str) -> None:
     """Получение информации о файле"""
     print(f"\n=== Информация о файле: {filename} ===")
     try:
@@ -206,7 +206,7 @@ def file_info(filename):
 # ========================
 
 
-def path_operations():
+def path_operations() -> None:
     """Примеры работы с путями"""
     print("\n=== Работа с путями ===")
 
@@ -231,7 +231,7 @@ def path_operations():
 # ========================
 
 
-def archive_example():
+def archive_example() -> None:
     """Пример работы с архивами"""
     print("\n=== Работа с архивами ===")
 
@@ -254,7 +254,7 @@ def archive_example():
 # ========================
 
 
-def safe_file_operations():
+def safe_file_operations() -> None:
     """Безопасная работа с файлами"""
     print("\n=== Безопасная работа с файлами ===")
 
@@ -284,7 +284,7 @@ def safe_file_operations():
 # ========================
 
 
-def main():
+def main() -> None:
     """Основная функция для демонстрации"""
     print("🎓 Примеры работы с файлами в Python")
     print("=" * 50)

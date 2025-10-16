@@ -53,5 +53,17 @@ ENV/
 student_solution.py
 *.pyc
 /cpython/LowLevelStuff/.vs
-/cpython/LowLevelStuff/pybind11
-/cpython/LowLevelStuff/out
+
+# CPYTHON
+# Объектные файлы
+*.o
+*.obj
+*.ko
+
+# Библиотеки
+*.lib
+*.dll
+*.dylib
+*.so
+*.pdb
+

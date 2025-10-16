@@ -52,3 +52,6 @@ ENV/
 # Student solutions (если не хотим их пушить)
 student_solution.py
 *.pyc
+/cpython/LowLevelStuff/.vs
+/cpython/LowLevelStuff/pybind11
+/cpython/LowLevelStuff/out

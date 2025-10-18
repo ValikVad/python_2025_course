@@ -1,56 +1,52 @@
 from collections import deque
-from typing import Any, List
-
-# input
-a = [-3, -2, 0, 1, 3, 5]
-a = [1]
-#     |               |
+from typing import List
 
 # result [0, 1, 2, 3, 3, 5]
 
-b = [abs(i) for i in a]
-c = sorted(b)
+# naive solution - O(nlogn)
+def solution1(array: List[int]) -> List[int]:
+    b = [abs(x) for x in array]
+    return sorted(b);
 
-p1 = 0
-p2 = len(a) - 1
+# 2 pointers solution - O(n)
+def solution2(array: List[int]) -> List[int]:
+    left: int = 0
+    right: int = len(array) - 1
+    answer: List[int] = []
 
-d = []
-while True:
-    if p1 == p2:
-        d.append(abs(a[p1]))
-        break
-    if abs(a[p1]) >= abs(a[p2]):
-        d.append(abs(a[p1]))
-        p1 += 1
-    else:
-        d.append(abs(a[p2]))
-        p2 -= 1
+    while left <= right:
+        if (abs(array[left]) >= abs(array[right])):
+            answer.append(abs(array[left]))
+            left += 1
+        else:
+            answer.append(abs(array[right]))
+            right -= 1
 
+    return answer[::-1]
 
-print(f"{d[::-1]=}")
+# very smart solution - O(n)
+def solution3(array: List[int]) -> List[int]:
+    left: int = 0
+    right: int = len(array) - 1
+    answer: deque[int] = deque()
 
+    while left <= right:
+        if (abs(array[left]) >= abs(array[right])):
+            answer.appendleft(abs(array[left]))
+            left += 1
+        else:
+            answer.appendleft(abs(array[right]))
+            right -= 1
+        
+    return answer;
 
-a1: List[int] = [-3, -2, 0, 1, 3, 5]
+def main() -> None:
+    array = [-3, -2, 0, 1, 3, 5]
+    print("Input:", *array);
+    
+    print("Output_1:", *solution1(array))
+    print("Output_2:", *solution2(array))
+    print("Output_3:", *solution3(array))
 
-#                |               |
-# result [0, 1, 2, 3, 3, 5]
-
-p1 = 0
-p2 = len(a) - 1
-
-
-d1: deque[Any] = deque()
-
-while True:
-    if p1 == p2:
-        d1.appendleft(abs(a1[p1]))
-        break
-
-    if abs(a1[p1]) >= abs(a1[p2]):
-        d1.appendleft(abs(a1[p1]))
-        p1 += 1
-    else:
-        d1.appendleft(abs(a1[p2]))
-        p2 -= 1
-
-print(f"{d1=}")
+if __name__ == "__main__":
+    main()

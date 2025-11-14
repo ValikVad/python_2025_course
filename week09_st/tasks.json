@@ -1,0 +1,26 @@
+[
+   {
+      "name": "gip",
+      "desc": "a;ifdhp",
+      "est": 0,
+      "status": "new"
+   },
+   {
+      "name": "task1",
+      "desc": "a;ifdhp",
+      "est": 0,
+      "status": "new"
+   },
+   {
+      "name": "task2",
+      "desc": "a;ifdhp",
+      "est": 0,
+      "status": "new"
+   },
+   {
+      "name": "da;kg",
+      "desc": "import streamlit as st\nfrom  datetime import datetime\nimport json \n\n\nJSON_PATH = \"tasks.json\"\ndef load_tasks():\n    with open(JSON_PATH, \"r\", encoding=\"utf-8\") as f:\n        return json.load(f)\n\ndef add_task(task: dict = None):\n    if isinstance(task, dict):\n        cur_tasks = load_tasks()\n        cur_tasks.append(task)\n    with open(JSON_PATH, \"w\", encoding=\"utf-8\") as f:\n        json.dump(cur_tasks, f, indent=3)\n    \n\nlist_tasks = []\nst.title(\"TODO list\")\ntab1, tab2 = st.tabs([\"\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0437\u0430\u0434\u0430\u0447\", \"\u0421\u043f\u0438\u0441\u043e\u043a \u0430\u043a\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u0445 \u0437\u0430\u0434\u0430\u0447\"])\nwith tab1:\n    st.subheader(\"\u0412 \u043e\u043a\u043d\u0435 \u043d\u0438\u0436\u0435 \u0432\u0432\u0435\u0434\u0438\u0442\u0435 \u0437\u0430\u0434\u0430\u0447\u0443\")\n    task_name = st.text_area(\"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438\", height=30)\n    task_description = st.text_area(\"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043e\u043f\u0438\u0437\u0430\u043d\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438 \u0432 \u044d\u0442\u043e\u043c \u043e\u043a\u043d\u0435\", height=100)\n    estimate = st.selectbox(\"\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u0447\u0430\u0441\u043e\u0432 \u0437\u0430\u0439\u043c\u0435\u0442 \u0437\u0430\u0434\u0430\u0447\u0430\", [0,1,2,3,4])\n    # estimate = st.select_slider(label=\"kek slider\", options= ,  value=[0, 1, 2, 3 ,4, 5])\n\n    if st.button(\"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u0434\u0430\u0447\u0443!\"):\n        try:\n            add_task({\"name\": task_name, \"desc\": task_description, \"est\": estimate, \"status\": \"new\"})\n        except Exception:\n            st.write(\"Not succes\")\nwith tab2:\n    title, description, estimate, status = st.columns([2,2,1,1])\n    list_tasks = load_tasks()\n    for id, val_i in enumerate(list_tasks):\n        title.write(val_i.get(\"name\"))\n        description.write(val_i.get(\"desc\"))\n        estimate.write(val_i.get(\"est\"))\n        status.selectbox(\"status\", [\"new\", \"inprogress\", \"done\"], key=id)\n\n\n    \n",
+      "est": 4,
+      "status": "new"
+   }
+]

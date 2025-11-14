@@ -12,11 +12,9 @@ authors = ["Ваше имя <ваш@email.com>"]
 python = "^3.12"
 requests = "^2.32.5"
 matplotlib = "^3.5.0"
-numpy = "2.3.3"
 pre-commit = "^4.3.0"
 types-requests = "^2.32.4.20250913"
-modelscope = "^1.31.0"
-streamlit = "^1.51.0"
+numpy = "^2.3.4"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.0.0"

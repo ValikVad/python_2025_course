@@ -48,32 +48,32 @@ dis.dis(greet)
 # >>>
 
 
-x: str = "global"
+# x: str = "global"
 
 
-def foo() -> None:
-    x = "local_1"
+# def foo() -> None:
+#     x = "local_1"
 
-    def foo_inner() -> None:
-        # nonlocal x
-        # x = "local_2"
-        # print(x)
-        global x
-        print(x)
-        x = "local_2"
-        print(x)
+#     def foo_inner() -> None:
+#         # nonlocal x
+#         # x = "local_2"
+#         # print(x)
+#         global x
+#         print(x)
+#         x = "local_2"
+#         print(x)
 
-    foo_inner()
-    print(x)
-
-
-foo()
-print(x)
+#     foo_inner()
+#     print(x)
 
 
-x1: list[str] = ["Artem"]
-x2: list[Any] = x1 + ["Danya"]
-print(x1 is x2)
+# foo()
+# print(x)
+
+
+# x1: list[str] = ["Artem"]
+# x2: list[Any] = x1 + ["Danya"]
+# print(x1 is x2)
 
 
 # >>> x = 5

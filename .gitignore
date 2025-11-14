@@ -52,3 +52,18 @@ ENV/
 # Student solutions (если не хотим их пушить)
 student_solution.py
 *.pyc
+/cpython/LowLevelStuff/.vs
+
+# CPYTHON
+# Объектные файлы
+*.o
+*.obj
+*.ko
+
+# Библиотеки
+*.lib
+*.dll
+*.dylib
+*.so
+*.pdb
+
